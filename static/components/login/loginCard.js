@@ -109,11 +109,12 @@ app.component('login-card',{
                         }
                         else{
                             that.showMessage("Your Info is  invalid: Please Try Again ","error")
-                            setTimeout(() => {
-                                window.location.reload()
-                            }, 2000);
+                            // setTimeout(() => {
+                            //     window.location.reload()
+                            // }, 2000);
                         }
                     }
+                    console.log(state)
                 }
             }
 

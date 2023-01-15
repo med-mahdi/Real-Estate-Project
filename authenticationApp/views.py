@@ -27,6 +27,7 @@ from sendgrid.helpers.mail import Mail
 @userAlreadyAuthenticated
 def loginPage(request):
     if request.method == "POST":
+        print("hey there")
         name = request.POST.get("username")
         user_password = request.POST.get("password")
         user = authenticate(request,username=name,password=user_password)
