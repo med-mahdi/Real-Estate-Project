@@ -118,7 +118,8 @@ app.component('login-card',{
                 }
             }
 
-            xhr.open("POST","/login/")
+            // xhr.open("POST","/login/")
+            xhr.open("POST","")
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${csrfValue}`)
         }
