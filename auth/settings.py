@@ -27,8 +27,9 @@ SECRET_KEY = 'django-insecure-2+h-7bp(*v3^$=dyc9p@@s=fm3jy9elw**dxn(zg)y(t$_wmai
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-CSRF_TRUSTED_ORIGINS = ['web-production-718e.up.railway.app']
-ALLOWED_HOSTS = ["web-production-718e.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ['https://web-production-718e.up.railway.app']
+# ALLOWED_HOSTS = ["web-production-718e.up.railway.app"]
+ALLOWED_HOSTS = ["https://web-production-718e.up.railway.app"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'django_cleanup.apps.CleanupConfig',
+    'corsheaders',
     
     'authenticationApp',
     'homeApi',
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
