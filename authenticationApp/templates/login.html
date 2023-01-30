@@ -28,7 +28,22 @@
             <div id="app">
                 <!-- <navbar-sec background="rgb(248 248 248)"></navbar-sec> -->
                 {% csrf_token %}
-                <login-card :csrfval="csrfValue"></login-card>
+                <!-- <login-card :csrfval="csrfValue"></login-card> -->
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label for="">username</label>
+                    <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
+                    <br>
+                    <label for="">password</label>
+                    <input type="password" name="password" autocomplete="new-password" required="" id="id_password2">
+                    <br>
+                    <button>Send Request</button>
+                </form>
+                
+
+
+
+
             </div>
         </section>
 

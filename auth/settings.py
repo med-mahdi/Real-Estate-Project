@@ -29,10 +29,8 @@ SECRET_KEY = 'django-insecure-2+h-7bp(*v3^$=dyc9p@@s=fm3jy9elw**dxn(zg)y(t$_wmai
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://web-production-f2615.up.railway.app']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'django_cleanup.apps.CleanupConfig',
-    'corsheaders',
     
     'authenticationApp',
     'homeApi',
@@ -53,7 +50,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,13 +58,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CORS_ORIGIN_WHITELIST = [
-    "https://web-production-718e.up.railway.app",
-]
-
-
-
 
 ROOT_URLCONF = 'auth.urls'
 
@@ -98,19 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'G6pl2m0szYzUgSuSYCDc',
-#         'HOST': 'containers-us-west-31.railway.app',
-#         'PORT': '7544',
-#     }
-# }
-
 
 
 
@@ -157,3 +133,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 SENDGRID_API_KEY = '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'
+
+
+
+
+# CSRF_TRUSTED_ORIGINS = ['https://web-production-f2615.up.railway.app']
