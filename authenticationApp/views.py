@@ -25,35 +25,34 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 #*/> Login EndPoint API
-# @userAlreadyAuthenticated
-# @csrf_exempt
-# def loginPage(request):
-#     if request.method == "POST":
-#         name = request.POST.get("username")
-#         user_password = request.POST.get("password")
-#         user = authenticate(request,username=name,password=user_password)
-#         if user is not None:
-#             login(request,user)
-#             msg = "Authenticated Succefully"
-#             return HttpResponse(msg)
-#         else:
-#             return HttpResponse("Authenticated unSuccefully")
-#     return render(request,"login.html")
-
-
-
 @userAlreadyAuthenticated
 def loginPage(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request,username=username,password=password)
+    if request.method == "POST":
+        name = request.POST.get("username")
+        user_password = request.POST.get("password")
+        user = authenticate(request,username=name,password=user_password)
         if user is not None:
             login(request,user)
-            return redirect('homePage')
+            msg = "Authenticated Succefully"
+            return HttpResponse(msg)
         else:
             return HttpResponse("Authenticated unSuccefully")
-    return render(request,'loginPage.html')
+    return render(request,"login.html")
+
+
+
+# @userAlreadyAuthenticated
+# def loginPage(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(request,username=username,password=password)
+#         if user is not None:
+#             login(request,user)
+#             return redirect('homePage')
+#         else:
+#             return HttpResponse("Authenticated unSuccefully")
+#     return render(request,'loginPage.html')
 
 
 
