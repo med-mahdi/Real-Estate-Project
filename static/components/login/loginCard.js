@@ -12,7 +12,7 @@ app.component('login-card',{
                             <p>Enter your username and password to login</p>
                         </div>
             
-                        <form action="/login"  @submit="submitForm" method="post">
+                        <form action="" @submit="submitForm" method="post">
                             <label for="">User name
                                 <div class="input-box">
                                     <input type="text" v-model="username" required placeholder="Enter your username" maxlength="20">
@@ -95,6 +95,7 @@ app.component('login-card',{
             xhr.onreadystatechange = function(){
                 var request_state = xhr.readyState;
                 console.log(request_state)
+                console.log("request has been send with csrf token: " + csrfValue)
 
                 if (request_state === 4){
                     var state = xhr.status
@@ -115,17 +116,20 @@ app.component('login-card',{
                             }, 2000);
                         }
                     }
+                    else {
+                        console.log("response staus is " + state);
+                    }
                 }
             }
 
             // xhr.open("POST","/login/")
             xhr.open("POST","")
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${csrfValue}`)
+            xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${this.csrfValue}`)
         }
     },
     mounted(){
         console.log("hey there")
-        console.log(this.csrfval)
+        console.log(this.csrfValue)
     }
 })
