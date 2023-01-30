@@ -106,13 +106,13 @@ app.component('login-card',{
                             that.showMessage(`Authenticated as ${usernameInput} Succefully`,"success")
                             // Drive The User To Home Page
                             setTimeout(() => {
-                                // that.redirectUser("home")
+                                that.redirectUser("home")
                             }, 2000);
                         }
                         else{
                             that.showMessage("Your Info is  invalid: Please Try Again ","error")
                             setTimeout(() => {
-                                // window.location.reload()
+                                window.location.reload()
                             }, 2000);
                         }
                     }
