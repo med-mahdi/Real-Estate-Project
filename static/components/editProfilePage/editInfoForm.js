@@ -84,7 +84,8 @@ app.component('our-form',{
     
 
     <label for=""><p>Phone Number</p>
-        <div class="input-box">
+        <div class="input-box phone_number">
+            <span id="phone_num_add">+212</span>
             <input type="number" name="" v-model="phoneNumber" id="" placeholder="Enter your Phone Number">
         </div>
         <span id="phoneNumber-notify" v-show="!validePhoneNumber">Required. Must be a Valid Phone number</span>

@@ -149,6 +149,9 @@ app.component('edit-info-form-sec',{
             var conf_pass_valid = that.valide_conf_password
             var password_match = that.passwordMatching
 
+
+            console.log(password_match)
+
             if (act_pass_valid && new_pass_valid && conf_pass_valid && password_match){
                 return true
             }
