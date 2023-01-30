@@ -19,12 +19,14 @@ import json
 from sendgrid import SendGridAPIClient
 from django.conf import settings
 from sendgrid.helpers.mail import Mail
+from django.views.decorators.csrf import csrf_protect
 
 
 
 
 #*/> Login EndPoint API
 @userAlreadyAuthenticated
+@csrf_protect
 def loginPage(request):
     if request.method == "POST":
         name = request.POST.get("username")
