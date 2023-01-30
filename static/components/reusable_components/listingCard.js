@@ -49,7 +49,7 @@ app.component('listing-card',{
     },
     methods: {
         postInfoRedirect(){
-            var url = `${this.domain}home/house/${this.identifier}`
+            var url = `/home/house/${this.identifier}`
             return window.location.assign(url)
         }
         ,
