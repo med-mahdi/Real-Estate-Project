@@ -41,7 +41,6 @@ def editProfileInfo(request):
 
 
 
-
 #*/> EndPoint API For Edit User Password
 @login_required(login_url="loginPage")
 def editPassword(request):
