@@ -59,6 +59,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://your-domain.com']
+
 ROOT_URLCONF = 'auth.urls'
 
 TEMPLATES = [
