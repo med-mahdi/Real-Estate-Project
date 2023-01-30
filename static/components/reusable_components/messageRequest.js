@@ -15,7 +15,7 @@ app.component('message-request',{
     ,
     data() {
         return {
-            messageValue : this.message,
+            messageValue : this.message.substring(0,40),
             img_src_value : null,
             request_status : this.status
         }
