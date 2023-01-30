@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'django_cleanup.apps.CleanupConfig',
-    'corsheaders',
     
     'authenticationApp',
     'homeApi',
@@ -53,7 +52,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -150,9 +148,3 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 SENDGRID_API_KEY = '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'
-
-
-CORS_ORIGIN_WHITELIST = [
-    "https://web-production-718e.up.railway.app",
-    # other trusted origins
-]
