@@ -94,6 +94,7 @@ app.component('login-card',{
 
             xhr.onreadystatechange = function(){
                 var request_state = xhr.readyState;
+                console.log(request_state)
 
                 if (request_state === 4){
                     var state = xhr.status
@@ -104,13 +105,13 @@ app.component('login-card',{
                             that.showMessage(`Authenticated as ${usernameInput} Succefully`,"success")
                             // Drive The User To Home Page
                             setTimeout(() => {
-                                that.redirectUser("home")
+                                // that.redirectUser("home")
                             }, 2000);
                         }
                         else{
                             that.showMessage("Your Info is  invalid: Please Try Again ","error")
                             setTimeout(() => {
-                                window.location.reload()
+                                // window.location.reload()
                             }, 2000);
                         }
                     }
@@ -121,5 +122,9 @@ app.component('login-card',{
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${csrfValue}`)
         }
+    },
+    mounted(){
+        console.log("hey there")
+        console.log(this.csrfval)
     }
 })
