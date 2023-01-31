@@ -94,7 +94,7 @@ app.component('edit-info-form-sec',{
 
             xhr.onload = function(){
                 var response = xhr.responseText
-                if (response == "Data has been saved successfully"){
+                if (response == "Password Has Been Saved Successfully"){
                     that.emittingParent(response,"success")
                 }
                 else{

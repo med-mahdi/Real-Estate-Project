@@ -6,7 +6,7 @@ app.component('overlay-login',{
     `   
     <div class="overlay" @click.self="closeOverlay">
         <div class="container">
-            <login-card :csrfval="csrfValue_token"></login-card>
+            <login-card :csrfval="csrfValue_token" pagename="homepage"></login-card>
         </div>
     </div>
     `,

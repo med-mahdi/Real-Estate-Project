@@ -57,7 +57,7 @@ def editPassword(request):
             user.set_password(new_password)
             user.save()
             login(request,user)
-            return HttpResponse("Data has been saved successfully")
+            return HttpResponse("Password Has Been Saved Successfully")
         else:
             return HttpResponse("Your Actuall Password your Enter is Invalid")
     return render(request,"accountSettings/passwordEdit.html")

@@ -41,7 +41,7 @@ app.component('login-card',{
                     </div>
                 </div>
     `,
-    props : ["csrfval"]
+    props : ["csrfval","pagename"]
     ,
     data(){
         return {
@@ -112,7 +112,7 @@ app.component('login-card',{
                         else{
                             that.showMessage("Your Info is  invalid: Please Try Again ","error")
                             setTimeout(() => {
-                                window.location.reload()
+                                // window.location.reload()
                             }, 2000);
                         }
                     }
@@ -121,15 +121,21 @@ app.component('login-card',{
                     }
                 }
             }
-
             // xhr.open("POST","/login/")
-            xhr.open("POST","")
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${this.csrfValue}`)
+            if (this.pagename == "loginpage"){
+                xhr.open("POST","")
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${this.csrfValue}`)
+            }
+            else {
+                xhr.open("POST","/login/")
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${this.csrfValue}`)    
+            }
         }
     },
     mounted(){
         console.log("hey there")
-        console.log(this.csrfValue)
+        console.log("page name is " + this.pagename);
     }
 })

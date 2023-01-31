@@ -28,7 +28,7 @@
             <div id="app">
                 {% csrf_token %}
                 <navbar-sec background="rgb(248 248 248)"></navbar-sec>
-                <login-card :csrfval="csrfValue"></login-card>
+                <login-card :csrfval="csrfValue" pagename="loginpage"></login-card>
             </div>
         </section>
 

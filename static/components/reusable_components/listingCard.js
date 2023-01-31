@@ -44,7 +44,8 @@ app.component('listing-card',{
     data() {
         return {
             savedPost : false,
-            domain : "http://127.0.0.1:8000/"
+            // domain : "http://.0.0.1:8000/"
+            domain : document.location.hostname
         }
     },
     methods: {
@@ -85,11 +86,11 @@ app.component('listing-card',{
     ,
     computed : {
         editPostPage(){
-            return `/home/edit/post/${this.identifier}/`
+            return `${this.domain}home/edit/post/${this.identifier}/`
         }
         ,
         linkPostInfo(){
-            return `/home/house/${this.identifier}`
+            return `${this.domain}home/house/${this.identifier}`
         }
     }
     ,
@@ -99,5 +100,7 @@ app.component('listing-card',{
         if (userExist ===  true){
             this.savedPost = userExist
         }
+
+        console.log(this.domain)
     }
 })
