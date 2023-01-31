@@ -222,7 +222,7 @@ def house_info_page(request,pk):
         dataJSON = json.dumps(house_dict)
         recommandationJson = json.dumps(res)
         context = {"data":dataJSON,"recommandations":recommandationJson}
-        return render(request,"houseINfo.html",context)
+        return render(request,"houseInfo.html",context)
     except ObjectDoesNotExist:
         return redirect("homePage")
 
