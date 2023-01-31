@@ -86,11 +86,11 @@ app.component('listing-card',{
     ,
     computed : {
         editPostPage(){
-            return `${this.domain}home/edit/post/${this.identifier}/`
+            return `/home/edit/post/${this.identifier}/`
         }
         ,
         linkPostInfo(){
-            return `${this.domain}home/house/${this.identifier}`
+            return `/home/house/${this.identifier}`
         }
     }
     ,
@@ -101,6 +101,6 @@ app.component('listing-card',{
             this.savedPost = userExist
         }
 
-        console.log(this.domain)
+        console.log(this.editPostPage)
     }
 })
