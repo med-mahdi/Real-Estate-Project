@@ -118,7 +118,7 @@ app.component('house-card',{
     ,
     computed : {
         linkHouseInfo(){
-            var domain = `http://127.0.0.1:8000/home/house/${this.id_house}`
+            var domain = `/home/house/${this.id_house}`
             return domain
         }
         ,

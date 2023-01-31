@@ -105,7 +105,7 @@ def searchPage(request):
 
 
 #*/ Endpoint Api For Post Info Page
-# @itemPostNotFound
+@itemPostNotFound
 @userViwPostPermission
 def house_info_page(request,pk):
     user = request.user.is_authenticated
