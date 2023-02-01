@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save , pre_save
 from django.dispatch import receiver
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 
 category_house = (
@@ -128,7 +128,17 @@ post_save.connect(generateTitleAuto,sender=HousePost)
 
 
 
-
+def add_text_to_image(image_path, text):
+    image = Image.open(image_path)
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype("arial.ttf", 400)
+    width, height = image.size
+    text_width, text_height = draw.textsize(text, font)
+    text_x = (width - text_width) / 2
+    text_y = (height - text_height) / 2
+    draw.text((text_x, text_y), text, fill=(0, 0, 0, 51), font=font)
+    image.save(image_path)
+    
 
 
 
@@ -138,3 +148,10 @@ class Images(models.Model):
     def __str__(self):
         image_name = "Image of " + str(self.post.user_owner) + " Post With id " + str(self.post.id)
         return str(image_name)
+
+
+def add_text_to_image_on_save(sender, instance, **kwargs):
+    print("Start Applying Process ________________")
+    add_text_to_image(instance.image.path, "DARE")
+    print("End Applying Process ________________")
+post_save.connect(add_text_to_image_on_save,sender=Images)
