@@ -193,7 +193,7 @@ def boutiquePage(request,name):
     boutiqueListing.reverse()
     boutique_listing_items = len(boutiqueListing)
     page = request.GET.get("page")
-    p = Paginator(boutiqueListing,4)
+    p = Paginator(boutiqueListing,8)
     boutiqueListing = p.get_page(page)
     has_next = boutiqueListing.has_next()
     has_previous = boutiqueListing.has_previous()
