@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-2+h-7bp(*v3^$=dyc9p@@s=fm3jy9elw**dxn(zg)y(t$_wmai
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ["https://web-production-aabe.up.railway.app"]
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://web-production-aabe.up.railway.app']
 
 # Application definition
 
@@ -89,19 +89,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'G6pl2m0szYzUgSuSYCDc',
-#         'HOST': 'containers-us-west-31.railway.app',
-#         'PORT': '7544',
-#     }
-# }
-
 
 
 
