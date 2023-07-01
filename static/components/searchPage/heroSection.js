@@ -122,11 +122,10 @@ app.component('hero-section',{
     },
     methods: {
         test(){
-            const domain = "http://127.0.0.1:8000";
+            const domain = document.location.hostname;
             var url = window.location.pathname;
             var page_url = domain+url
-            var searchUrl = `?city=${this.location}&category=${this.type_estate}&transaction=${this.transaction}&price=${this.price_order}`;
-            var searchUrl = page_url+searchUrl
+            var searchUrl = `/home/search/?city=${this.location}&category=${this.type_estate}&transaction=${this.transaction}&price=${this.price_order}`;
 
             window.location.assign(searchUrl)
         }

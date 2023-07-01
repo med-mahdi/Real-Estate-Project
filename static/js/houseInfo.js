@@ -5,7 +5,6 @@ const app = Vue.createApp({
         payload : test_data,
         recommandtion_data : rec_data,
         showPhoneNumber : false,
-        domain : "http://127.0.0.1:8000/"
       }
     },
     methods: {
@@ -20,7 +19,7 @@ const app = Vue.createApp({
                 console.log("Request Response " + response)
             }
         }
-        xhr.open("GET",`${this.domain}home/api/savedposts/add/${id}`)
+        xhr.open("GET",`/home/api/savedposts/add/${id}`)
         xhr.send()
       }
       ,
