@@ -29,10 +29,14 @@ def userViwPostPermission(view_func):
         post_item_status = HousePost.objects.get(id=post_item_id).status
         post_item_owner = HousePost.objects.get(id=post_item_id).user_owner
 
+        print("------------------------")
+        print(post_item_status)
+
         if (post_item_status == "Active") or (auth_user == post_item_owner):
             return view_func(request,*args,**kwargs)
         else:
-            return redirect("searchPage")
+            return HttpResponse("This House Not Found")
+            # return redirect("searchPage")
     return inside    
 
 
