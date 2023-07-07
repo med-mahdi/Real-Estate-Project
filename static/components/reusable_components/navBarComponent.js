@@ -89,6 +89,8 @@ app.component('navbar-sec',{
                 this.username = (res[0].username);
                 this.img = (res[0].image)
             })
+            .catch((err)=> {console.error(err)})
+
         }
         ,
         openDropDown(){
